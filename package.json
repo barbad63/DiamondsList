@@ -1,11 +1,27 @@
 {
   "name": "diamondlist",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is UNH BootCamp Project 2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbad63/DiamondsList.git"
+  },
+  "bugs": {
+    "url": "https://github.com/barbad63/DiamondsList/issues"
+  },
+  "homepage": "https://github.com/barbad63/DiamondsList#readme"
 }

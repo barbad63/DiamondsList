@@ -1,14 +1,76 @@
 module.exports = function(sequelize, DataTypes) {
-  var Users = sequelize.define("Users", {
-    // Giving the Author model a name of type STRING
-    id: DataTypes.INT
+  var User = sequelize.define("User", {
+    username: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      unique: true,
+      validate: {
+        notEmpty: true
+      }
+    },
+    password: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    phone: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        not: ['[a-z]', 'i']
+      }
+    },
+    email: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      unique: true,
+      validate: {
+        isEmail: true
+      }
+    },
+    address: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    city: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    state: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    zip: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    }, 
+    {
+      classMethods: {
+        associate: function(models) {
+          User.hasMany(models.Service, {
+            onDelete: "cascade"
+          });
+          User.hasMany(models.Favorite);
+        }
+      }
+    }
   });
-Users.associate = function(models) {
 
-    Users.hasMany(models.Services, {
-    	onDelete: "cascade"
-    });
-  };
+return User;
 
-  return Users;
 };
+  

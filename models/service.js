@@ -1,27 +1,33 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
-    title: {
+  var Service = sequelize.define("Service", {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKay: true
+    },
+    businessName: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    body: {
-      type: DataTypes.TEXT,
+      len: { args: 1,
+              msg: "Must have a Business Name"}
+    }
+    businessService: {
+      type: DataTypes.TEXT
       allowNull: false,
       len: [1]
+    },
+    {
+      classMethods: {
+        associate: function(models) {
+          Service.belongsTo(models.User, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+          Service.belongsTo(models.Category);
+        }
+      }
     }
   });
-// Add a belongsTo association to Authors here
-Post.associate = function(models) {
-    Post.belongsTo(models.Author, {
-    foreignKey: {
-      allowNull: false
-  }
-});
-};
-  
-  // Example: https://github.com/sequelize/express-example/blob/master/models/task.js
-  return Post;
+  return Service;
 };
