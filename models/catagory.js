@@ -3,24 +3,18 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
-      primaryKay: true
+      primaryKey: true
     },
-    categoryName: {
+    category: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
-    },
-    {
-      classMethods: {
-        associate: function(models) {
-          Favorite.belongsTo(models.User, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-        }
-      }
     }
   });
-  return Service;
+    
+  Category.associate =  function(models) {
+    Category.hasMany(models.Service);
+  };
+   
+  return Category;
 };

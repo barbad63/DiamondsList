@@ -57,19 +57,15 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true
       }
-    }, 
-    {
-      classMethods: {
-        associate: function(models) {
-          User.hasMany(models.Service, {
-            onDelete: "cascade"
-          });
-          User.hasMany(models.Category);
-        }
-      }
     }
   });
-
+    
+  User.associate = function(models) {
+    User.hasMany(models.Service, {
+      onDelete: "cascade"
+    });
+  };
+  
 return User;
 
 };
