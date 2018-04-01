@@ -64,7 +64,7 @@ module.exports = function(sequelize, DataTypes) {
           User.hasMany(models.Service, {
             onDelete: "cascade"
           });
-          User.hasMany(models.Favorite);
+          User.hasMany(models.Category);
         }
       }
     }

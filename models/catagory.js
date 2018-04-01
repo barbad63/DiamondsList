@@ -9,24 +9,18 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
-    }
-    businessService: {
-      type: DataTypes.TEXT
-      allowNull: false,
-      len: [1]
+    },
+    {
+      classMethods: {
+        associate: function(models) {
+          Favorite.belongsTo(models.User, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+        }
+      }
     }
   });
-
-{
-  classMethods: {
-    associate: function(models) {
-      Service.belongsTo(models.User, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    }
-  }
-};
   return Service;
 };
