@@ -1,8 +1,8 @@
   <div id="wrapper">
+        <a  href="home" style="text-decoration: none !important;"><i class="w3-jumbo w3-spin fa fa-home is-size-1 is-pulled-right" style="color:black"></i></a>
 
         <!-- Header -->
         <header id="header">
-            <a  href="home" style="text-decoration: none !important;"><i class="w3-jumbo w3-spin fa fa-home is-size-1 is-pulled-right" style="color:black"></i></a>
 
             <h1 class="title is-3">Diamond Services</h1>
             <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
@@ -16,24 +16,10 @@
         <br>
  
 
-{{!-- <div class="field">
-  <label class="label">UserId</label>
-  <div class="control has-icons-left has-icons-right">
-    <input class="input is-success" type="number" placeholder="Text input" value="">
-    <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-  </div>
- 
-</div> --}}
-
 <div class="field">
   <label class="label" id='bName'>Business Name</label>
   <div class="control">
-    <textarea class="textarea is-rounded" placeholder="Textarea"></textarea>
+    <textarea id="businessName" class="textarea is-rounded" placeholder="Textarea"></textarea>
   </div>
 </div>
 
@@ -48,7 +34,7 @@
     </span>
   </p>
   <p class="control">
-    <input class="input is-rounded" type="number" placeholder="Amount of money">
+    <input id="amount" class="input is-rounded" type="number" placeholder="Amount of money">
   </p>
 
 </div>
@@ -56,7 +42,7 @@
 <div class="field">
   <label class="label">Service Description</label>
   <div class="control">
-    <textarea class="textarea" placeholder="Textarea"></textarea>
+    <textarea id="description" class="textarea" placeholder="Textarea"></textarea>
   </div>
 </div>
 
@@ -84,7 +70,7 @@
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link">Submit</button>
+    <button id="serviceFormSubmit" class="button is-link">Submit</button>
   </div>
   <div class="control">
     <button class="button is-text">Cancel</button>

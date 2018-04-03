@@ -33,13 +33,13 @@
                 <div class="field" id="fn">
                     <label class="label">FirstName</label>
                     <div class="control">
-                        <input class="input is-primary" type="text" placeholder="Text input" value="">
+                        <input class="input is-primary" id ="firstName" type="text" placeholder="Text input" value="">
                     </div>
                 </div>
                 <div class="field" id="ln">
                     <label class="label">LastName</label>
                     <div class="control">
-                        <input class="input is-success" type="text" placeholder="Text input" value="">
+                        <input class="input is-success" id="lastName" type="text" placeholder="Text input" value="">
                     </div>
                 </div>
             </div>
@@ -47,14 +47,8 @@
             <div class="field is-horizontal">
                 <div class="field" id="username">
                     <label class="label">Username</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input is-success" type="text" placeholder="Text input" value="">
-                        <span class="icon is-small is-left">
-                    <i class="fas fa-user"></i>
-                  </span>
-                        <span class="icon is-small is-right">
-                    <i class="fas fa-check"></i>
-                  </span>
+                    <div class="control">
+                        <input id="un" class="input is-success" type="text" placeholder="Text input" value="">
                     </div>
                     <!-- <p class="help is-success">This username is available</p> -->
                 </div>
@@ -62,7 +56,7 @@
                 <div class="field" id='password'>
                     <label class="label">Password</label>
                     <p class="control has-icons-left">
-                        <input class="input is-success" type="password" placeholder="Password">
+                        <input id="pass" class="input is-success" type="password" placeholder="Password">
                         <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                       </span>
@@ -74,7 +68,7 @@
                 <div class="field" id='address'>
                     <label class="label">Address</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input is-success" type="text" placeholder="Text input" value="">
+                        <input id="add" class="input is-success" type="text" placeholder="Text input" value="">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                           </span>
@@ -87,7 +81,7 @@
                 <div class="field" id='city'>
                     <label class="label">City</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input is-success" type="text" placeholder="Text input" value="">
+                        <input id="cit" class="input is-success" type="text" placeholder="Text input" value="">
                         <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                         </span>
@@ -102,7 +96,7 @@
                 <div class="field" id='state'>
                     <label class="label">State</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input is-success" type="text" placeholder="Text input" value="">
+                        <input id="stat" class="input is-success" type="text" placeholder="Text input" value="">
                         <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                               </span>
@@ -116,7 +110,7 @@
                     <label class="label">Zipcode</label>
                     <div class="control has-icons-left has-icons-right">
                         <p class="control is-expanded">
-                            <input class="input is-success" type="tel" placeholder="zipcode">
+                            <input id="zi" class="input is-success" type="tel" placeholder="zipcode">
                         </p>
                         <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -133,7 +127,7 @@
                     <label class="label">Email</label>
                     <div class="control has-icons-left has-icons-right">
 
-                        <input class="input is-success" type="email" placeholder="Email input" value="">
+                        <input id="mail" class="input is-success" type="email" placeholder="Email input" value="">
                         <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -155,7 +149,7 @@
                             </a>
                             </p>
                             <p class="control is-expanded">
-                                <input class="input is-success" type="tel" placeholder="Your phone number">
+                                <input id="number" class="input is-success" type="tel" placeholder="Your phone number">
                             </p>
                         </div>
                         <p class="help">Do not enter the first zero</p>
@@ -190,7 +184,7 @@
 
         <div class="field is-grouped bottom">
             <div class="control">
-                <button class="button is-success">Submit</button>
+                <button class="button is-success" id="signUpSubmit">Submit</button>
             </div>
             <div class="control">
                 <button class="button is-text">Cancel</button>
