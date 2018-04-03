@@ -5,6 +5,12 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       primaryKey: true
     },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: { args: 1,
+              msg: "Must have a Categoy Name"}
+    },
     businessName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,17 +19,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     businessService: {
       type: DataTypes.TEXT,
-      allowNull: false,
-      len: [1]
+      allowNull: false
+    },
+    costOfService: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
   Service.associate = function(models) {
     Service.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-    Service.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false
       }
