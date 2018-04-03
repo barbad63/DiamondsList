@@ -1,8 +1,8 @@
 $("#signUpSubmit").on("click", function(event) {
     event.preventDefault();
 
-    var firstName = $("#firstName").val();
-    var lastName = $("#lastName").val();
+    var fullName = $("#fullName").val();
+    // var lastName = $("#lastName").val();
     var userName = $("#un").val();
     var password = $("#pass").val();
     var address = $("#add").val();
@@ -13,9 +13,9 @@ $("#signUpSubmit").on("click", function(event) {
     var phoneNumber = $("#number").val();
 
 
-    console.log("First Name: " + firstName);
-    console.log("Last Name: " + lastName);
-    console.log("User Name: " + userName);
+    // console.log("First Name: " + firstName);
+    // console.log("Last Name: " + lastName);
+    // console.log("User Name: " + userName);
     console.log("Password: " + password);
     console.log("Address: " + address);
     console.log("City: " + city);
@@ -24,8 +24,8 @@ $("#signUpSubmit").on("click", function(event) {
     console.log("Email: " + email);
     console.log("Phone Number: " + phoneNumber);
 
-    $("#firstName").val("");
-    $("#lastName").val("");
+    $("#fullName").val("");
+    // $("#lastName").val("");
     $("#un").val("");
     $("#pass").val("");
     $("#add").val("");
