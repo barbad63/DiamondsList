@@ -166,6 +166,12 @@ q {
     border-radius: 30px;
 }
 
+#msg {
+    color: navy;
+    /* margin-left: 100px; */
+    font-family: fantasy;
+}
+
 blockquote:before,
 blockquote:after,
 q:before,
