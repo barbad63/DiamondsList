@@ -16,7 +16,7 @@ app.set("view engine", "handlebars");
 // Data
 
 // Routes
-app.get("/home", function(req, res) {
+app.get("/", function(req, res) {
     res.render("home");
 });
 app.get("/signIn", function(req, res) {
