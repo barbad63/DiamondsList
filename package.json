@@ -10,18 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "bulma": "^0.6.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "request": "^2.85.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/barbad63/DiamondsList.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/barbad63/DiamondsList/issues"
-  },
-  "homepage": "https://github.com/barbad63/DiamondsList#readme"
+    "mysql2": "^1.5.3",
+    "request": "^2.85.0",
+    "sequelize": "^4.37.5"
+  }
 }
