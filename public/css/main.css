@@ -104,6 +104,37 @@ video {
     padding-right: 60px;
 }  */
 
+#rating {
+    cursor: pointer;
+}
+
+x-star-rating {
+    font-family: 'Ionicons';
+    font-size: 48px;
+    display: inline-flex;
+}
+
+x-star-rating>.star::after {
+    content: '\f3ae';
+    color: #777;
+}
+
+x-star-rating>.star.full::after {
+    content: '\f2fc';
+    color: #fd0;
+}
+
+.button:hover {
+    background-color: #ff496e;
+}
+
+#services {
+    /* margin-left: 50px;
+    margin-right: 150px;
+    padding-right: 100px; */
+    /* border-radius: 60px; */
+}
+
 #fn,
 #ln,
 #username,
@@ -118,8 +149,19 @@ video {
     margin-left: 50px;
 }
 
+.link:hover {
+    background-color: #ff496e;
+}
+
 .bottom {
     margin-left: 50px;
+}
+
+#wrap {
+    background-color: aliceblue;
+    border-radius: 30px;
+    width: 1000px;
+    height: 500px;
 }
 
 #ln,
