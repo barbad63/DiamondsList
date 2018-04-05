@@ -141,3 +141,9 @@ $("#showModal").click(function() {
 $(".modal-close").click(function() {
     $(".modal").removeClass("is-active");
 });
+
+$("#sub").on("click", function(event) {
+    event.preventDefault();
+    $(".modal").addClass("is-active");
+
+});

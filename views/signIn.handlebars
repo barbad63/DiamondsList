@@ -18,22 +18,20 @@
         <!-- Header -->
         <header id="header">
             
-            <h1 class="title is-3">Diamond Services</h1>
+            <h1 class="title is-3" id="font">Diamond Services</h1>
             
             <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
          
         </header>
 
-
         <center>
             <h1 class="title is-3 is-danger" style="color:black">Sign In</h1>
         </center>
 
-\
         <div class="field">
             <label class="label">Username</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="Text input" value="">
+                <input class="input is-success has-text-white" type="text" placeholder="Text input" value="">
                 <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                   </span>
@@ -47,7 +45,7 @@
         <div class="field">
             <label class="label ">Password</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="password" placeholder="password" value="">
+                <input class="input is-success has-text-white" type="password" placeholder="password" value="">
                 <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -57,8 +55,6 @@
             </div>
 
         </div>
-
-
 
         <div class="field">
             <div class="control" style="color:blue">
@@ -85,7 +81,9 @@
 
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-success">Submit</button>
+                {{!-- <button class="button is-success">Submit</button> --}}
+                        <button class="button is-success" ><a  href="services">SignIn</a></button>
+
             </div>
             <div class="control">
                 <button class="button is-text">Cancel</button>
@@ -98,6 +96,7 @@
         <br>
     </div>
     <br>
+
     <br>
     <hr>
     <footer id="footer">
