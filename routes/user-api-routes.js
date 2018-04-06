@@ -23,7 +23,9 @@ module.exports = function(app) {
     });
 
     app.post("/api/users", function(req, res) {
+        console.log(req);
         db.User.create(req.body, { include: [db.Creds, db.Service] }).then(function(dbUser) {
+           console.log(dbUser);
             res.json(dbUser);
         });
     });
