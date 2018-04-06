@@ -17,18 +17,69 @@
 
         <br>
 </div>
+
+
 <br>
 <center>
 <div id="wrap">
-<x-star-rating value="3" number="5" id="rating">
-</x-star-rating>
+          <table style="width:100%">
+          <tr>
+            <th>Category</th>
+            <th>Business Name</th> 
+            <th>Business Service Description</th>
+            <th>Cost Of Service</th>
+          </tr>
+          {{#each services }}
+          <tr>
+            <td>{{category}}</td>
+            <td>{{businessName}}</td> 
+            <td>{{businessService}}</td>
+            <td>{{costOfService}}</td>
+            <td><button class="button is-success title is-5" id="login" ><a  href="serviceForm">Send Email</a></button></td>
+          </tr>
+          {{/each}}
+          </table>      
+
+
+{{!-- <x-star-rating value="3" number="5" id="rating">
+</x-star-rating> --}}
 </div>
 </center>
+
 <br>
+<div class="container" id="app">
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Rating</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+        <x-star-rating value="3" number="5" id="rating">
+        </x-star-rating>
+        <label class="label">Service Description</label>
+        <div class="control">
+            <textarea id="description" class="textarea" placeholder="Textarea"></textarea>
+        </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success"><a href="/" >Save changes</a></button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
+</div>
+  {{!-- <textarea style="position:absolute;z-index: 9999" name="" id="" cols="30" rows="2"></textarea> --}}
+  <br /><br /><br />
+  <p><center>
+    <button class="button" id="showModal" style="background-color:tomato;width:150px; height:40px;border-radius:30px; " >Rating</button>
+  </center>
+  </p>
+</div>
   <hr>
 <footer id="footer">
      <img src="images/f.png" style="border-radius:10px">
-           <img src="images/google.png" style="width:30px" style="border-radius:30px">
+           <img src="images/google.png" style="width:30px" style="border-radius:0px">
             <img src="images/twitter.png" style="border-radius:10px"> 
         <div style=" padding-top:25px;">
             <div class="container">

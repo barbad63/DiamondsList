@@ -18,17 +18,25 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/services/:id", function(req, res) {
+    app.get("/api/services/:category", function(req, res) {
+        
 
-        db.Post.findOne({
+        db.Service.findAll({
             where: {
-                id: req.params.id
+                category: req.params.category
             },
-            include: [db.User]
-        }).then(function(dbService) {
-            res.json(dbService);
+            // include: [db.User]
+        }).then(function(dbPost) {
+
+            // var handlebars = {services: dbPost};
+            // res.render("category", handlebars );
+            res.json(dbPost);
+
+
         });
     });
+
+
 
     app.post("/api/services", function(req, res) {
         db.Service.create(req.body).then(function(dbService) {
