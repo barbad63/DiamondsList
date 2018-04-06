@@ -69,7 +69,9 @@ $("#serviceFormSubmit").on("click", function(event) {
             category: category,    
             businessName: businessName,
             businessService : businessService,
-            costOfService: amount  
+            costOfService: amount,
+            UserId: 1
+
         }
         })
         .done(function( msg ) {
