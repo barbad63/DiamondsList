@@ -37,20 +37,30 @@ $("#signUpSubmit").on("click", function(event) {
 
 });
 
+const button = document.querySelector('.button');
+const dropdown = document.querySelector('.dropdown');
+
+button.addEventListener('click', () => {
+    dropdown.classList.toggle('is-open');
+});
+
 $("#serviceFormSubmit").on("click", function(event) {
     event.preventDefault();
 
     var businessName = $("#businessName").val();
     var amount = $("#amount").val();
     var businessService = $("#description").val();
+    var category = $("#myselect").val();
 
     console.log("Business Name: " + businessName);
     console.log("Amount: " + amount);
     console.log("Business Description: " + description);
+    console.log("Category: " + category);
 
     $("#businessName").val("");
     $("#amount").val("");
     $("#description").val("");
+    $("#myselect").val("");
 });
 
 class StarRating extends HTMLElement {
@@ -118,8 +128,22 @@ class StarRating extends HTMLElement {
     }
 }
 
-rating.addEventListener('rate', () => {
-    console.log("Rating: " + rating.value);
-});
+// rating.addEventListener('rate', () => {
+//     console.log("Rating: " + rating.value);
+// });
 
 window.customElements.define('x-star-rating', StarRating);
+
+$("#showModal").click(function() {
+    $(".modal").addClass("is-active");
+});
+
+$(".modal-close").click(function() {
+    $(".modal").removeClass("is-active");
+});
+
+$("#sub").on("click", function(event) {
+    event.preventDefault();
+    $(".modal").addClass("is-active");
+
+});
