@@ -135,6 +135,33 @@ x-star-rating>.star.full::after {
     /* border-radius: 60px; */
 }
 
+#signin:hover {
+    background-color: #ff496e;
+}
+
+#font {
+    font-family: cursive;
+    font-size: 40px;
+}
+
+#ser {
+    font-family: cursive;
+    font-size: 30px;
+}
+
+.dropdown {
+    box-shadow: 0 0 8px #777;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+}
+
+.dropdown.is-open {
+    display: block;
+}
+
 #fn,
 #ln,
 #username,
@@ -224,6 +251,18 @@ q:after {
 
 #login {
     margin-right: 30px;
+}
+
+#login:hover {
+    background-color: #ff496e;
+}
+
+#serviceFormSubmit:hover {
+    background-color: #ff496e;
+}
+
+#joinus:hover {
+    background-color: #ff496e;
 }
 
 table {
