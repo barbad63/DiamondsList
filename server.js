@@ -35,7 +35,7 @@ app.use(sess({
     saveUninitialized: true
 }));
 
-app.use(logger('dev'));
+app.use(logger('combined'));
 app.use(cookieParser());
 
 var PORT = process.env.PORT || 8080;
@@ -53,6 +53,7 @@ app.use(bodyParser.json());
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // passport Strategy -- the express session middleware before calling passport.session()
 passport.use('local', new LocalStrategy({
@@ -87,9 +88,11 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-    connection.query("select * from tbl_users where id = " + id, function(err, rows) {
-        done(err, rows[0]);
-    });
+    // connection.query("select * from tbl_users where id = " + id, 
+    db.Creds.findAll({ where: { id: id } }).then(
+        function(err, rows) {
+            done(err, rows[0]);
+        });
 });
 
 // Sign-In routes
@@ -97,7 +100,7 @@ passport.deserializeUser(function(id, done) {
 //     res.render('login/index', { 'message': req.flash('message') });
 // });
 
-app.post("/signin", passport.authenticate('local', {
+app.post("/signIn", passport.authenticate('local', {
     successRedirect: '/category',
     failureRedirect: '/signIn',
     failureFlash: true
@@ -105,16 +108,17 @@ app.post("/signin", passport.authenticate('local', {
     res.render('/category', { 'message': req.flash('message') });
 });
 
-app.get('/logout', function(req, res) {
-    req.session.destroy();
-    req.logout();
-    res.redirect('/signIn');
-});
+// app.get('/logout', function(req, res) {
+//     req.session.destroy();
+//     req.logout();
+//     res.redirect('/signIn');
+// });
 
 
 require("./routes/service-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
+require("./routes/creds-api-routes.js")(app);
 
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
