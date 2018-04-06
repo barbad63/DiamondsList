@@ -128,9 +128,9 @@ class StarRating extends HTMLElement {
     }
 }
 
-rating.addEventListener('rate', () => {
-    console.log("Rating: " + rating.value);
-});
+// rating.addEventListener('rate', () => {
+//     console.log("Rating: " + rating.value);
+// });
 
 window.customElements.define('x-star-rating', StarRating);
 
@@ -140,4 +140,10 @@ $("#showModal").click(function() {
 
 $(".modal-close").click(function() {
     $(".modal").removeClass("is-active");
+});
+
+$("#sub").on("click", function(event) {
+    event.preventDefault();
+    $(".modal").addClass("is-active");
+
 });

@@ -17,7 +17,7 @@ module.exports = function(app) {
         res.render("home");
     });
     app.get("/signIn", function(req, res) {
-        res.render("signIn");
+        res.render("signIn", { 'message': req.flash('message') });
     });
     app.get("/signUp", function(req, res) {
         res.render("signUp");

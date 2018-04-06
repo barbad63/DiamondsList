@@ -2545,6 +2545,51 @@ button:disabled,
     }
 }
 
+h5,
+h3,
+.white-text {
+    font-weight: 600;
+    font-size: 33px;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    margin-top: 50px;
+    width: 1000px;
+    height: 50%;
+    overflow: scroll;
+}
+
+.form-container {
+    padding: 40px;
+    padding-top: 10px;
+}
+
+#showprofile {
+    float: right;
+}
+
+#message_window {
+    color: red;
+}
+
+.confirmation-tabs-btn {
+    position: absolute;
+}
+
+.switch {
+    text-align: center;
+}
+
+select {
+    border: 1px solid gray;
+    border-radius: 2px;
+    height: 3rem;
+    width: 50%;
+    margin-left: 50px;
+}
+
 @media screen and (max-width: 980px) {
     .thumbnails h3 {
         font-size: 0.8em;
@@ -2717,4 +2762,15 @@ body.is-covered #wrapper {
     #footer {
         padding: 2em 0 2em 0;
     }
+}
+
+#fullName,
+#number,
+#add,
+#cit,
+#stat,
+#zi,
+#mail,
+#pass {
+    background-color: #000;
 }

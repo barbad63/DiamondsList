@@ -1,11 +1,9 @@
 {{!-- <div class="navbar-start">
-
     </div>
     <div class="navbar-end">
         <a class="navbar-item title is-4" href="index.html">
                     Home
                     </a>
-
         <a class="navbar-item title is-4" href="">
                Our Services
         </a>
@@ -13,62 +11,56 @@
     <hr> --}}
     <!-- Wrapper -->
     <div id="wrapper">
+            <a  href="/" style="text-decoration: none !important;"><i class="w3-jumbo w3-spin fa fa-home is-size-1 is-pulled-right" style="color:black"></i></a>
 
         <!-- Header -->
         <header id="header">
-            <a  href="/" style="text-decoration: none !important;"><i class="w3-jumbo w3-spin fa fa-home is-size-1 is-pulled-right" style="color:black"></i></a>
 
-            <h1 class="title is-3 is-blue">Diamond Services</h1>
+            <h1 class="title is-3 is-blue" id="font">Diamond Services</h1>
             <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
 
         </header>
         <center>
-            <h1 class="title is-3 is-danger" style="color:black">Sign Up</h1>
+            <h1 class="title is-3 is-danger" style="color:silver">Sign Up</h1>
         </center>
         <br>
 
         <div id='form'>
 
-            {{!-- <div class="field is-horizontal">
-                <div class="field" id="fn">
-                    <label class="label">FirstName</label>
-                    <div class="control">
-                        <input class="input is-primary" id ="firstName" type="text" placeholder="Text input" value="">
-                    </div>
-                </div>
-                <div class="field" id="ln">
-                    <label class="label">LastName</label>
-                    <div class="control">
-                        <input class="input is-success" id="lastName" type="text" placeholder="Text input" value="">
-                    </div>
-                </div>
-            </div> --}}
-
             <div class="field is-horizontal">
                 <div class="field" id="username">
-                    <label class="label">FullName</label>
+                    <label class="label" style="color:silver">FullName</label>
                     <div class="control">
-                        <input id="fullName" class="input is-success" type="text" placeholder="Text input" value="">
+                        <input id="fullName" class="input is-success has-text-white" type="text" placeholder="Text input" value="" required>
                     </div>
                     <!-- <p class="help is-success">This username is available</p> -->
                 </div>
 
-                <div class="field" id='password'>
-                    <label class="label">Password</label>
-                    <p class="control has-icons-left">
-                        <input id="pass" class="input is-success" type="password" placeholder="Password">
-                        <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </p>
+                  <div class="field" id='phone'>
+                    <label class="label" style="color:silver">Phone Number</label>
+                    <div class="field is-expanded">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <a class="button is-static">
+                              +1
+                            </a>
+                            </p>
+                            <p class="control is-expanded">
+                                <input id="number" class="input is-success has-text-white" type="tel" placeholder="Your phone number">
+                            </p>
+                        </div>
+                        <p class="help">Do not enter the first zero</p>
+                    </div>
                 </div>
+
+            
             </div>
 
             <div class="field is-horizontal">
                 <div class="field" id='address'>
-                    <label class="label">Address</label>
+                    <label class="label" style="color:silver">Address</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input id="add" class="input is-success" type="text" placeholder="Text input" value="">
+                        <input id="add" class="input is-success has-text-white" type="text" placeholder="Text input" value="" required>
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                           </span>
@@ -79,9 +71,9 @@
                 </div>
 
                 <div class="field" id='city'>
-                    <label class="label">City</label>
+                    <label class="label" style="color:silver">City</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input id="cit" class="input is-success" type="text" placeholder="Text input" value="">
+                        <input id="cit" class="input is-success has-text-white" type="text" placeholder="Text input" value="" required>
                         <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                         </span>
@@ -94,9 +86,9 @@
 
             <div class="field is-horizontal">
                 <div class="field" id='state'>
-                    <label class="label">State</label>
+                    <label class="label" style="color:silver">State</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input id="stat" class="input is-success" type="text" placeholder="Text input" value="">
+                        <input id="stat" class="input is-success has-text-white" type="text" placeholder="Text input" value="" required>
                         <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                               </span>
@@ -107,10 +99,10 @@
                 </div>
 
                 <div class="field" id='zip'>
-                    <label class="label">Zipcode</label>
+                    <label class="label" style="color:silver">Zipcode</label>
                     <div class="control has-icons-left has-icons-right">
                         <p class="control is-expanded">
-                            <input id="zi" class="input is-success" type="tel" placeholder="zipcode">
+                            <input id="zi" class="input is-success has-text-white" type="tel" placeholder="zipcode">
                         </p>
                         <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -124,10 +116,10 @@
 
             <div class="field is-horizontal">
                 <div class="field" id='email'>
-                    <label class="label">Email</label>
+                    <label class="label" style="color:silver">Email</label>
                     <div class="control has-icons-left has-icons-right">
 
-                        <input id="mail" class="input is-success" type="email" placeholder="Email input" value="">
+                        <input id="mail" class="input is-success has-text-white" type="email" placeholder="Email input" value="">
                         <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -138,22 +130,14 @@
                     <!-- <p class="help is-danger">This email is invalid</p> -->
                 </div>
 
-
-                <div class="field" id='phone'>
-                    <label class="label">Phone Number</label>
-                    <div class="field is-expanded">
-                        <div class="field has-addons">
-                            <p class="control">
-                                <a class="button is-static">
-                              +1
-                            </a>
-                            </p>
-                            <p class="control is-expanded">
-                                <input id="number" class="input is-success" type="tel" placeholder="Your phone number">
-                            </p>
-                        </div>
-                        <p class="help">Do not enter the first zero</p>
-                    </div>
+                <div class="field" id='password'>
+                    <label class="label" style="color:silver">Password</label>
+                    <p class="control has-icons-left">
+                        <input id="pass" class="input is-success has-text-white" type="password" placeholder="Password" required>
+                        <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
                 </div>
             </div>
         </div>
