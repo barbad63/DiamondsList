@@ -10,6 +10,18 @@ module.exports = function(app) {
         });
     });
 
+    app.post("/api/signin", function(req, res) {
+
+        db.User.findOne({
+            where: {
+                email: req.body.email,
+                password: req.body.password
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
+
     app.get("/api/users/:id", function(req, res) {
 
         db.User.findOne({

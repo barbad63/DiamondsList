@@ -185,6 +185,7 @@ x-star-rating>.star.full::after {
 }
 
 #wrap {
+    padding: 50px;
     background-color: aliceblue;
     border-radius: 30px;
     width: 1000px;
