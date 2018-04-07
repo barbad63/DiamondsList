@@ -12,10 +12,6 @@ $("#signUpSubmit").on("click", function(event) {
     var email = $("#mail").val();
     var phoneNumber = $("#number").val();
 
-
-    // console.log("First Name: " + firstName);
-    // console.log("Last Name: " + lastName);
-    // console.log("User Name: " + userName);
     console.log("Password: " + password);
     console.log("Address: " + address);
     console.log("City: " + city);
@@ -25,7 +21,6 @@ $("#signUpSubmit").on("click", function(event) {
     console.log("Phone Number: " + phoneNumber);
 
     $("#fullName").val("");
-    // $("#lastName").val("");
     $("#un").val("");
     $("#pass").val("");
     $("#add").val("");
@@ -40,9 +35,9 @@ $("#signUpSubmit").on("click", function(event) {
 const button = document.querySelector('.button');
 const dropdown = document.querySelector('.dropdown');
 
-button.addEventListener('click', () => {
-    dropdown.classList.toggle('is-open');
-});
+// button.addEventListener('click', () => {
+//     dropdown.classList.toggle('is-open');
+// });
 
 $("#serviceFormSubmit").on("click", function(event) {
     event.preventDefault();

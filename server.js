@@ -108,8 +108,7 @@ require("./routes/creds-api-routes.js")(app);
 require("./routes/auth-api-routes.js")(app);
 
 // require("./routes/auth-routes.js")(app);
-
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });
