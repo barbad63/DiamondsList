@@ -1,39 +1,47 @@
 $("#signUpSubmit").on("click", function(event) {
     event.preventDefault();
 
-    var fullName = $("#fullName").val();
-    // var lastName = $("#lastName").val();
-    var userName = $("#un").val();
-    var password = $("#pass").val();
-    var address = $("#add").val();
-    var city = $("#cit").val();
-    var state = $("#stat").val();
-    var zipcode = $("#zi").val();
-    var email = $("#mail").val();
-    var phoneNumber = $("#number").val();
-
+    var newUser = {
+        fullName: $("#fullName").val().trim(),
+        // var lastName = $("#lastName").val();
+        userName: "1234",//$("#un").val().trim(),
+        password: $("#pass").val().trim(),
+        address: $("#add").val().trim(),
+        city: $("#cit").val().trim(),
+        state: $("#stat").val().trim(),
+        zipcode: $("#zi").val().trim(),
+        email: $("#mail").val().trim(),
+        phoneNumber: $("#number").val()
+    };
+    //Send an AJAX post to the user-api post request
+    $.post("/api/users", newUser)
+    //on success tell the user
+        .done(function(data) {
+            console.log(data);
+            alert("Added User")
+        });
 
     // console.log("First Name: " + firstName);
     // console.log("Last Name: " + lastName);
     // console.log("User Name: " + userName);
-    console.log("Password: " + password);
-    console.log("Address: " + address);
-    console.log("City: " + city);
-    console.log("State: " + state);
-    console.log("Zipcode: " + zipcode);
-    console.log("Email: " + email);
-    console.log("Phone Number: " + phoneNumber);
-
-    $("#fullName").val("");
-    // $("#lastName").val("");
-    $("#un").val("");
-    $("#pass").val("");
-    $("#add").val("");
-    $("#cit").val("");
-    $("#stat").val("");
-    $("#zi").val("");
-    $("#mail").val("");
-    $("#number").val("");
+    console.log("Password: " + newUser.password);
+    console.log("Address: " + newUser.address);
+    console.log("City: " + newUser.city);
+    console.log("State: " + newUser.state);
+    console.log("Zipcode: " + newUser.zipcode);
+    console.log("Email: " + newUser.email);
+    console.log("Phone Number: " + newUser.phoneNumber);
+//Turn this off while testing
+    // $("#fullName").val("");
+    // // $("#lastName").val("");
+    // $("#un").val("");
+    // $("#pass").val("");
+    // $("#add").val("");
+    // $("#cit").val("");
+    // $("#stat").val("");
+    // $("#zi").val("");
+    // $("#mail").val("");
+    // $("#number").val("");
 
 });
 
@@ -61,6 +69,24 @@ $("#serviceFormSubmit").on("click", function(event) {
     $("#amount").val("");
     $("#description").val("");
     $("#myselect").val("");
+
+    $.ajax({
+        method: "POST",
+        url: '/api/services',    
+        data: { 
+            category: category,    
+            businessName: businessName,
+            businessService : businessService,
+            costOfService: amount,
+            UserId: 1
+
+        }
+        })
+        .done(function( msg ) {
+        alert( "Data Saved: " + msg );
+        });
+
+
 });
 
 class StarRating extends HTMLElement {

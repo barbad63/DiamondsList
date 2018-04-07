@@ -4,7 +4,7 @@
         <!-- Header -->
         <header id="header">
 
-            <h1 class="title is-3" id="font">Diamond Services</h1>
+            <h1 class="title is-3">Diamond Services</h1>
             <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
         </header>
 
@@ -22,6 +22,25 @@
 <br>
 <center>
 <div id="wrap">
+          <table style="width:100%">
+          <tr>
+            <th>Category</th>
+            <th>Business Name</th> 
+            <th>Business Service Description</th>
+            <th>Cost Of Service</th>
+          </tr>
+          {{#each services }}
+          <tr>
+            <td>{{category}}</td>
+            <td>{{businessName}}</td> 
+            <td>{{businessService}}</td>
+            <td>{{costOfService}}</td>
+            <td><button class="button is-success title is-5" id="login" ><a  href="serviceForm">Send Email</a></button></td>
+          </tr>
+          {{/each}}
+          </table>      
+
+
 {{!-- <x-star-rating value="3" number="5" id="rating">
 </x-star-rating> --}}
 </div>
@@ -39,7 +58,7 @@
     <section class="modal-card-body">
         <x-star-rating value="3" number="5" id="rating">
         </x-star-rating>
-        <label class="label">Comments</label>
+        <label class="label">Service Description</label>
         <div class="control">
             <textarea id="description" class="textarea" placeholder="Textarea"></textarea>
         </div>

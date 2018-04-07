@@ -9,5 +9,5 @@ exports.email = {
 }
 
 exports.dbPW = {
-	dbpw: process.env.dbPW
+	dbpw: process.env.DBPW
 }
