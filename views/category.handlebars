@@ -16,11 +16,6 @@
            <h1 class="title is-3 is-danger" style="color:#ff496e"> Few local results found. Here are some from nearby areas</h1>
         </center>
 
-    <center>
-        <h1 class="title is-3 is-danger" style="color:black">AVAILABLE SERVICE IN THIS CATEGORY</h1>
-        <br>
-        <h1 class="title is-3 is-danger" style="color:#ff496e"> Few local results found. Here are some from nearby areas</h1>
-    </center>
     <br>
 </div>
 
@@ -31,10 +26,10 @@
 <div id="wrap">
           <table style="width:100%">
           <tr>
-            <th>Category</th>
-            <th>Business Name</th> 
-            <th>Business Service Description</th>
-            <th>Cost Of Service</th>
+            <th class="title is-5 is-danger" >Category</th>
+            <th class="title is-5 is-danger" >Business Name</th> 
+            <th class="title is-5 is-danger" >Business Service Description</th>
+            <th class="title is-5 is-danger" >Cost Of Service</th>
           </tr>
           {{#each services }}
           <tr>
@@ -81,8 +76,8 @@
   {{!-- <textarea style="position:absolute;z-index: 9999" name="" id="" cols="30" rows="2"></textarea> --}}
   <br /><br /><br />
   <p><center>
-    <button class="button" id="showModal" style="background-color:tomato;width:150px; height:40px;border-radius:30px; " >Log Out</button>
-    <button class="button" style="background-color:tomato;width:150px; height:40px;border-radius:30px; " ><a href="/services">Services</a></button>
+    <button class="button is-black" id="showModal" style="margin-right:30px;" >Log Out</button>
+    <button class="button is-black" ><a href="/categories">Services</a></button>
   </center>
   </p>
 
@@ -91,7 +86,7 @@
 
 {{!-- Footer --}}
 <footer id="footer">
-     <img src="images/f.png" style="border-radius:10px">
+     <img src="/images/f.png" style="border-radius:10px">
            <img src="/images/google.png" style="width:30px" style="border-radius:0px">
             <img src="/images/twitter.png" style="border-radius:10px"> 
         <div style=" padding-top:25px;">
