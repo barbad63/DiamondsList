@@ -48,9 +48,9 @@ $("#signUpSubmit").on("click", function(event) {
 const button = document.querySelector('.button');
 const dropdown = document.querySelector('.dropdown');
 
-button.addEventListener('click', () => {
-    dropdown.classList.toggle('is-open');
-});
+// button.addEventListener('click', () => {
+//     dropdown.classList.toggle('is-open');
+// });
 
 $("#serviceFormSubmit").on("click", function(event) {
     event.preventDefault();
@@ -78,16 +78,35 @@ $("#serviceFormSubmit").on("click", function(event) {
             businessName: businessName,
             businessService : businessService,
             costOfService: amount,
-            UserId: 1
+            UserId: sessionStorage.getItem("UserId")
 
         }
-        })
-        .done(function( msg ) {
-        alert( "Data Saved: " + msg );
+        }).done(function( msg ) {
+        window.location.href="/services";
         });
 
 
 });
+
+$("#login").on("click", function(event) {
+    event.preventDefault();
+
+var signin = {
+
+        email: $("#email").val().trim(),
+        password: $("#password").val().trim()
+
+    };
+    //Send an AJAX post to the user-api post request
+    $.post("/api/signin", signin)
+    //on success tell the user
+        .done(function(data) {
+            sessionStorage.setItem("UserId", data.id);
+            window.location.href="/services";
+            });
+        });
+
+
 
 class StarRating extends HTMLElement {
     get Value() {
