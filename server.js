@@ -58,28 +58,28 @@ app.use(function(err, req, res, next) {
 
 // passport Strategy -- the express session middleware before calling passport.session()
 passport.use('local', new LocalStrategy({
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true //passback entire req to call back
-}, function(req, username, password, done) {
-    console.log(username + ' = ' + password);
-    if (!username || !password) { return done(null, false, req.flash('message', 'All fields are required.')); }
+}, function(req, email, password, done) {
+    console.log(email + ' = ' + password);
+    if (!email || !password) { return done(null, false, req.flash('message', 'All fields are required.')); }
     var salt = '7fa73b47df808d36c5fe328546ddef8b9011b2c6';
     // connection.query("select * from tbl_users where username = ?", [username],
-    db.Creds.findAll({ where: { "username": username } }).then(
+    db.User.findAll({ where: { "email": email } }).then(
         function(rows, err) {
-            console.log("Error Occured while retrieving user creds = " + JSON.stringify(err));
+            console.log("Error Occured while retrieving user credentials = " + JSON.stringify(err));
             console.log("Returned rows = " + rows);
 
             if (err) return done(req.flash('message', err));
 
-            if (!rows.length) { return done(null, false, req.flash('message', 'Invalid username or password.')); }
+            if (!rows.length) { return done(null, false, req.flash('message', 'Invalid email or password.')); }
             salt = salt + '' + password;
             var encPassword = crypto.createHash('sha1').update(salt).digest('hex');
             var dbPassword = rows[0].password;
 
             if (!(dbPassword == encPassword)) {
-                return done(null, false, req.flash('message', 'Invalid username or password.'));
+                return done(null, false, req.flash('message', 'Invalid email or password.'));
             }
             req.session.user = rows[0];
             return done(null, rows[0]);
@@ -93,7 +93,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
     // connection.query("select * from tbl_users where id = " + id, 
-    db.Creds.findAll({ where: { id: id } }).then(
+    db.User.findAll({ where: { id: id } }).then(
         function(rows, err) {
             console.log("Inside deserializeUser");
             console.log("rows = " + rows);
@@ -104,11 +104,9 @@ passport.deserializeUser(function(id, done) {
 require("./routes/service-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-require("./routes/creds-api-routes.js")(app);
-require("./routes/auth-api-routes.js")(app);
 
-// require("./routes/auth-routes.js")(app);
 db.sequelize.sync({}).then(function() {
+
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });

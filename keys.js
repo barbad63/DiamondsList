@@ -7,3 +7,7 @@ exports.email = {
 	email_priv_key: process.env.PRIVATE_KEY,
 	domain: process.env.DOMAIN_
 }
+
+exports.dbPW = {
+	dbpw: process.env.DBPW
+}

@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var db = require("../models");
 
 // Routes
 // =============================================================
@@ -31,5 +32,20 @@ module.exports = function(app) {
     app.get("/category", function(req, res) {
         res.render("category");
     });
+     app.get("/services/:category", function(req, res) {
+            db.Service.findAll({
+                where: {
+                category: req.params.category
+            },
+            // include: [db.User]
+            }).then(function(dbPost) {
+                console.log (dbPost);
+            var handlebars = {services: dbPost};
+            res.render("category", handlebars );
 
+
+            });
+
+            // res.render("services");
+        });
 };

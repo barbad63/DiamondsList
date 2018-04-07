@@ -1,34 +1,48 @@
 $("#signUpSubmit").on("click", function(event) {
     event.preventDefault();
 
-    var fullName = $("#fullName").val();
-    // var lastName = $("#lastName").val();
-    var userName = $("#un").val();
-    var password = $("#pass").val();
-    var address = $("#add").val();
-    var city = $("#cit").val();
-    var state = $("#stat").val();
-    var zipcode = $("#zi").val();
-    var email = $("#mail").val();
-    var phoneNumber = $("#number").val();
 
-    console.log("Password: " + password);
-    console.log("Address: " + address);
-    console.log("City: " + city);
-    console.log("State: " + state);
-    console.log("Zipcode: " + zipcode);
-    console.log("Email: " + email);
-    console.log("Phone Number: " + phoneNumber);
+    var newUser = {
+        fullName: $("#fullName").val().trim(),
+        // var lastName = $("#lastName").val();
+        //userName: "1234",//$("#un").val().trim(),
+        password: $("#pass").val().trim(),
+        address: $("#add").val().trim(),
+        city: $("#cit").val().trim(),
+        state: $("#stat").val().trim(),
+        zipcode: $("#zi").val().trim(),
+        email: $("#mail").val().trim(),
+        phoneNumber: $("#number").val()
+    };
+    //Send an AJAX post to the user-api post request
+    $.post("/api/users", newUser)
+        //on success tell the user
+        .done(function(data) {
+            window.location.href = "/services";
+        });
 
-    $("#fullName").val("");
-    $("#un").val("");
-    $("#pass").val("");
-    $("#add").val("");
-    $("#cit").val("");
-    $("#stat").val("");
-    $("#zi").val("");
-    $("#mail").val("");
-    $("#number").val("");
+    // console.log("First Name: " + firstName);
+    // console.log("Last Name: " + lastName);
+    // console.log("User Name: " + userName);
+    console.log("Password: " + newUser.password);
+    console.log("Address: " + newUser.address);
+    console.log("City: " + newUser.city);
+    console.log("State: " + newUser.state);
+    console.log("Zipcode: " + newUser.zipcode);
+    console.log("Email: " + newUser.email);
+    console.log("Phone Number: " + newUser.phoneNumber);
+    //Turn this off while testing
+    // $("#fullName").val("");
+    // // $("#lastName").val("");
+    // $("#un").val("");
+    // $("#pass").val("");
+    // $("#add").val("");
+    // $("#cit").val("");
+    // $("#stat").val("");
+    // $("#zi").val("");
+    // $("#mail").val("");
+    // $("#number").val("");
+
 
 });
 
@@ -56,7 +70,44 @@ $("#serviceFormSubmit").on("click", function(event) {
     $("#amount").val("");
     $("#description").val("");
     $("#myselect").val("");
+
+    $.ajax({
+        method: "POST",
+        url: '/api/services',
+        data: {
+            category: category,
+            businessName: businessName,
+            businessService: businessService,
+            costOfService: amount,
+            UserId: sessionStorage.getItem("UserId")
+
+        }
+    }).done(function(msg) {
+        window.location.href = "/services";
+    });
+
+
 });
+
+$("#login").on("click", function(event) {
+    event.preventDefault();
+
+    var signin = {
+
+        email: $("#email").val().trim(),
+        password: $("#password").val().trim()
+
+    };
+    //Send an AJAX post to the user-api post request
+    $.post("/api/signin", signin)
+        //on success tell the user
+        .done(function(data) {
+            sessionStorage.setItem("UserId", data.id);
+            window.location.href = "/services";
+        });
+});
+
+
 
 class StarRating extends HTMLElement {
     get Value() {

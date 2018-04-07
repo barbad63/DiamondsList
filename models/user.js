@@ -1,5 +1,25 @@
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        email: {
+            allowNull: false,
+            type: DataTypes.STRING,
+            unique: true,
+            validate: {
+                isEmail: true
+            }
+        },
+        password: {
+            allowNull: false,
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: true
+            }
+        },
         fullName: {
             allowNull: false,
             type: DataTypes.STRING,
@@ -12,14 +32,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             validate: {
                 not: ['[a-z]', 'i']
-            }
-        },
-        email: {
-            allowNull: false,
-            type: DataTypes.STRING,
-            unique: true,
-            validate: {
-                isEmail: true
             }
         },
         address: {
@@ -57,11 +69,7 @@ module.exports = function(sequelize, DataTypes) {
             onDelete: "cascade"
         });
     };
-    User.associate = function(models) {
-        User.hasMany(models.Creds, {
-            onDelete: "cascade"
-        });
-    }
+
     return User;
 
 };

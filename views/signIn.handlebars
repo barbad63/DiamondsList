@@ -1,8 +1,8 @@
 
     <!-- Wrapper -->
-<div id="wrapper">
-     <a  href="/" style="text-decoration: none !important;"><i class="w3-jumbo w3-spin fa fa-home is-size-1 is-pulled-right" style="color:black"></i></a>
 
+    <div id="wrapper">
+            
 <!-- Header -->
     <header id="header">
             
@@ -19,9 +19,9 @@
         
     <form id= "name-form">
         <div class="field">
-            <label class="label">Username</label>
+            <label class="label">Email</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-success has-text-white" type="text" placeholder="Text input"  name="username" value="">
+                <input class="input is-success has-text-white" type="email" placeholder="Text input"  name="email" value="" id="email">
                 <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                   </span>
@@ -35,7 +35,7 @@
         <div class="field">
             <label class="label ">Password</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-success has-text-white" type="password" placeholder="password" name="password" value="">
+                <input class="input is-success has-text-white" type="password" placeholder="password" name="password" value="" id="password">
                 <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -71,8 +71,8 @@
 
         <div class="field is-grouped">
             <div class="control">
-              <form action="/signIn" method="post">
-                        <button class="button is-success" formmethod="post" id="login">SignIn</button>
+              <form>
+                        <button class="button is-success" id="login"><a href="services">SignIn</a></button>
                 </form>
             </div>
             <div class="control">
