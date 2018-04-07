@@ -17,8 +17,7 @@ $("#signUpSubmit").on("click", function(event) {
     $.post("/api/users", newUser)
     //on success tell the user
         .done(function(data) {
-            console.log(data);
-            alert("Added User")
+            window.location.href="/services";
         });
 
     // console.log("First Name: " + firstName);
