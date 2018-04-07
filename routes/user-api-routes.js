@@ -23,7 +23,7 @@ module.exports = function(app) {
     });
 
     app.post("/api/users", function(req, res) {
-        db.User.create(req.body, { include: [db.Creds, db.Service] }).then(function(dbUser) {
+        db.User.create(req.body, { include: db.Creds }).then(function(dbUser) {
             res.json(dbUser);
         });
     });
