@@ -4,7 +4,7 @@ $("#signUpSubmit").on("click", function(event) {
     var newUser = {
         fullName: $("#fullName").val().trim(),
         // var lastName = $("#lastName").val();
-        userName: "1234",//$("#un").val().trim(),
+        //userName: "1234",//$("#un").val().trim(),
         password: $("#pass").val().trim(),
         address: $("#add").val().trim(),
         city: $("#cit").val().trim(),

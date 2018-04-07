@@ -71,9 +71,9 @@ passport.use('local', new LocalStrategy({
     if (!username || !password) { return done(null, false, req.flash('message', 'All fields are required.')); }
     var salt = '7fa73b47df808d36c5fe328546ddef8b9011b2c6';
     // connection.query("select * from tbl_users where username = ?", [username],
-    db.Creds.findAll({ where: { "username": username } }).then(
+    db.User.findAll({ where: { "username": username } }).then(
         function(rows, err) {
-            console.log("Error Occured while retrieving user creds = " + JSON.stringify(err));
+            console.log("Error Occured while retrieving user credentials = " + JSON.stringify(err));
             console.log("Returned rows = " + rows);
 
             if (err) return done(req.flash('message', err));
@@ -98,7 +98,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
     // connection.query("select * from tbl_users where id = " + id, 
-    db.Creds.findAll({ where: { id: id } }).then(
+    db.User.findAll({ where: { id: id } }).then(
         function(rows, err) {
             console.log("Inside deserializeUser");
             console.log("rows = " + rows);
@@ -125,7 +125,6 @@ app.get('/logout', function(req, res) {
 require("./routes/service-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-require("./routes/creds-api-routes.js")(app);
 
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
