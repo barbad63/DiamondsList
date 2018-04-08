@@ -192,7 +192,7 @@ x-star-rating>.star.full::after {
     background-color: aliceblue;
     border-radius: 30px;
     width: 1000px;
-    height: 500px;
+    /*height: 500px;*/
 }
 
 #ln,
@@ -2779,3 +2779,4 @@ body.is-covered #wrapper {
 #pass {
     background-color: #000;
 }
+
