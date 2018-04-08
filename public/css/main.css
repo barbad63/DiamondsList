@@ -176,6 +176,9 @@ x-star-rating>.star.full::after {
     width: 450px;
     margin-left: 50px;
 }
+.copyright {
+    text-align: center;
+}
 .help {
     color: white;
 }
@@ -186,7 +189,10 @@ x-star-rating>.star.full::after {
 .bottom {
     margin-left: 50px;
 }
-
+#clear-form {
+    background-color: transparent;
+    border-color: black;
+}
 #wrap {
     padding: 50px;
     background-color: aliceblue;
@@ -2777,6 +2783,7 @@ body.is-covered #wrapper {
 #zi,
 #mail,
 #pass {
+
     background-color: #000;
 }
 

@@ -51,6 +51,11 @@ const dropdown = document.querySelector('.dropdown');
 //     dropdown.classList.toggle('is-open');
 // });
 
+$("#clear-form").on("click", function(event) {
+    event.preventDefault();
+    window.location.reload();
+});
+
 $("#serviceFormSubmit").on("click", function(event) {
     event.preventDefault();
 

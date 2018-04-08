@@ -1,14 +1,4 @@
-{{!-- <div class="navbar-start">
-    </div>
-    <div class="navbar-end">
-        <a class="navbar-item title is-4" href="index.html">
-                    Home
-                    </a>
-        <a class="navbar-item title is-4" href="">
-               Our Services
-        </a>
-    </div>
-    <hr> --}}
+
     <!-- Wrapper -->
     <div id="wrapper">
             
@@ -118,26 +108,29 @@
                 <div class="field" id='email'>
                     <label class="label" style="color:silver">Email</label>
                     <div class="control has-icons-left has-icons-right">
-
-                        <input id="mail" class="input is-success has-text-white" type="email" placeholder="Email input" value="">
+                        <input id="mail" class="input is-success has-text-white" type="email" placeholder="Email input" value="" required>
                         <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
+                            <i class="fas fa-envelope"></i>
+                        </span>
                         <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                      </span>
+                            <i class="fas fa-check"></i>
+                        </span>
                     </div>
-                    <!-- <p class="help is-danger">This email is invalid</p> -->
                 </div>
 
                 <div class="field" id='password'>
                     <label class="label" style="color:silver">Password</label>
-                    <p class="control has-icons-left">
-                        <input id="pass" class="input is-success has-text-white" type="password" placeholder="Password" required>
+                    <div class="control has-icons-left">
+                        <p class="control is-expanded">
+                            <input id="pass" class="input is-success has-text-white" type="password" placeholder="Password" required>
+                        </p>
                         <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </p>
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,7 +141,7 @@
             <div class="control is-danger">
                 <label class="checkbox">
                     <input type="checkbox">
-                    I agree to the <a href="#">terms and conditions</a>
+                    I agree to the <a href="/terms" target="_blank">terms and conditions</a>
                   </label>
             </div>
         </div>
@@ -171,12 +164,13 @@
                 <button class="button is-success" id="signUpSubmit">Submit</button>
             </div>
             <div class="control">
-                <button class="button is-text">Cancel</button>
+                <button id="cancel" value="Cancel"><a href="/">Cancel</a></button>
+            </div>
+            <div class="control">
+                <button id="clear-form" type="reload" value="Clear">Clear</button>
             </div>
         </div>
     </div>
     </div>
     <br>
-    <br>
-    <br>
-    <hr>
+
