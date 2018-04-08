@@ -165,6 +165,7 @@ x-star-rating>.star.full::after {
 #fn,
 #ln,
 #username,
+#email,
 #password,
 #address,
 #city,
@@ -175,7 +176,9 @@ x-star-rating>.star.full::after {
     width: 450px;
     margin-left: 50px;
 }
-
+.help {
+    color: white;
+}
 .link:hover {
     background-color: #ff496e;
 }
@@ -194,6 +197,7 @@ x-star-rating>.star.full::after {
 
 #ln,
 #password,
+#email,
 #city,
 #zip,
 #phone {
