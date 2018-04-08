@@ -1,8 +1,9 @@
  <div id="wrapper">
-        <a  href="/" style="text-decoration: none !important;"><i class="w3-jumbo w3-spin fa fa-home is-size-1 is-pulled-right" style="color:black"></i></a>
 
-        <!-- Header -->
-        <header id="header">
+    <a  href="/" style="text-decoration: none !important;"><i class="w3-jumbo w3-spin fa fa-home is-size-1 is-pulled-right" style="color:black"></i></a>
+     <!-- Header -->
+    <header id="header">
+
 
             <h1 class="title is-3">Diamond Services</h1>
             <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
@@ -15,19 +16,20 @@
            <h1 class="title is-3 is-danger" style="color:#ff496e"> Few local results found. Here are some from nearby areas</h1>
         </center>
 
-        <br>
+    <br>
 </div>
 
 
 <br>
 <center>
+
 <div id="wrap">
           <table style="width:100%">
           <tr>
-            <th>Category</th>
-            <th>Business Name</th> 
-            <th>Business Service Description</th>
-            <th>Cost Of Service</th>
+            <th class="title is-5 is-danger" >Category</th>
+            <th class="title is-5 is-danger" >Business Name</th> 
+            <th class="title is-5 is-danger" >Business Service Description</th>
+            <th class="title is-5 is-danger" >Cost Of Service</th>
           </tr>
           {{#each services }}
           <tr>
@@ -44,6 +46,7 @@
 {{!-- <x-star-rating value="3" number="5" id="rating">
 </x-star-rating> --}}
 </div>
+
 </center>
 
 <br>
@@ -52,7 +55,7 @@
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Rating</p>
+      <p class="modal-card-title">Please take a moment to rate our app</p>
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
@@ -64,22 +67,26 @@
         </div>
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success"><a href="/" >Save changes</a></button>
+      <button class="button is-success"><a href="/">Submit</a></button>
       <button class="button">Cancel</button>
     </footer>
   </div>
 </div>
+
   {{!-- <textarea style="position:absolute;z-index: 9999" name="" id="" cols="30" rows="2"></textarea> --}}
   <br /><br /><br />
   <p><center>
-    <button class="button" id="showModal" style="background-color:tomato;width:150px; height:40px;border-radius:30px; " >Log Out</button>
-    <button class="button" style="background-color:tomato;width:150px; height:40px;border-radius:30px; " ><a href="/services">Services</a></button>
+    <button class="button is-black" id="showModal" style="margin-right:30px;" >Log Out</button>
+    <button class="button is-black" ><a href="/categories">Services</a></button>
   </center>
   </p>
+
 </div>
-  <hr>
+<hr>
+
+{{!-- Footer --}}
 <footer id="footer">
-     <img src="images/f.png" style="border-radius:10px">
+     <img src="/images/f.png" style="border-radius:10px">
            <img src="/images/google.png" style="width:30px" style="border-radius:0px">
             <img src="/images/twitter.png" style="border-radius:10px"> 
         <div style=" padding-top:25px;">

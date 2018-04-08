@@ -1,6 +1,7 @@
 $("#signUpSubmit").on("click", function(event) {
     event.preventDefault();
 
+
     var newUser = {
         fullName: $("#fullName").val().trim(),
         // var lastName = $("#lastName").val();
@@ -15,9 +16,9 @@ $("#signUpSubmit").on("click", function(event) {
     };
     //Send an AJAX post to the user-api post request
     $.post("/api/users", newUser)
-    //on success tell the user
+        //on success tell the user
         .done(function(data) {
-            window.location.href="/services";
+            window.location.href = "/services";
         });
 
     // console.log("First Name: " + firstName);
@@ -30,7 +31,7 @@ $("#signUpSubmit").on("click", function(event) {
     console.log("Zipcode: " + newUser.zipcode);
     console.log("Email: " + newUser.email);
     console.log("Phone Number: " + newUser.phoneNumber);
-//Turn this off while testing
+    //Turn this off while testing
     // $("#fullName").val("");
     // // $("#lastName").val("");
     // $("#un").val("");
@@ -41,6 +42,7 @@ $("#signUpSubmit").on("click", function(event) {
     // $("#zi").val("");
     // $("#mail").val("");
     // $("#number").val("");
+
 
 });
 
@@ -71,18 +73,18 @@ $("#serviceFormSubmit").on("click", function(event) {
 
     $.ajax({
         method: "POST",
-        url: '/api/services',    
-        data: { 
-            category: category,    
+        url: '/api/services',
+        data: {
+            category: category,
             businessName: businessName,
-            businessService : businessService,
+            businessService: businessService,
             costOfService: amount,
             UserId: sessionStorage.getItem("UserId")
 
         }
-        }).done(function( msg ) {
-        window.location.href="/services";
-        });
+    }).done(function(msg) {
+        window.location.href = "/services";
+    });
 
 
 });
@@ -90,7 +92,7 @@ $("#serviceFormSubmit").on("click", function(event) {
 $("#login").on("click", function(event) {
     event.preventDefault();
 
-var signin = {
+    var signin = {
 
         email: $("#email").val().trim(),
         password: $("#password").val().trim()
@@ -98,12 +100,12 @@ var signin = {
     };
     //Send an AJAX post to the user-api post request
     $.post("/api/signin", signin)
-    //on success tell the user
+        //on success tell the user
         .done(function(data) {
             sessionStorage.setItem("UserId", data.id);
-            window.location.href="/services";
-            });
+            window.location.href = "/services";
         });
+});
 
 
 

@@ -23,7 +23,7 @@ module.exports = function(app) {
     app.get("/signUp", function(req, res) {
         res.render("signUp");
     });
-    app.get("/services", function(req, res) {
+    app.get("/categories", function(req, res) {
         res.render("services");
     });
     app.get("/serviceForm", function(req, res) {
@@ -32,20 +32,18 @@ module.exports = function(app) {
     app.get("/category", function(req, res) {
         res.render("category");
     });
-     app.get("/services/:category", function(req, res) {
-            db.Service.findAll({
-                where: {
+    app.get("/services/:category", function(req, res) {
+        db.Service.findAll({
+            where: {
                 category: req.params.category
             },
             // include: [db.User]
-            }).then(function(dbPost) {
-                console.log (dbPost);
-            var handlebars = {services: dbPost};
-            res.render("category", handlebars );
+        }).then(function(dbPost) {
+            console.log(dbPost);
+            var handlebars = { services: dbPost };
+            res.render("category", handlebars);
 
 
-            });
-
-            // res.render("services");
         });
+    });
 };

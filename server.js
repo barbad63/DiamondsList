@@ -11,12 +11,11 @@ var flash = require('connect-flash');
 var crypto = require('crypto');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-// var connection        = require('./lib/dbconn');
 var sess = require('express-session');
 var Store = require('express-session').Store;
 var BetterMemoryStore = require(__dirname + '/memory');
 
-var store = new BetterMemoryStore({ expires: 60 * 60 * 1000, debug: true })
+var store = new BetterMemoryStore({ expires: 60 * 60 * 1000, debug: true });
 
 var db = require("./models");
 
@@ -39,17 +38,14 @@ app.use(logger('dev'));
 app.use(cookieParser());
 
 var PORT = process.env.PORT || 8080;
+
 // Set Handlebars as the default templating engine.
 app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-// Data
-var db = require("./models");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-// parse application/json
 app.use(bodyParser.json());
-
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -59,7 +55,6 @@ app.use(function(err, req, res, next) {
     console.error(err.stack)
     res.status(500).send('Something broke!')
 });
-
 
 // passport Strategy -- the express session middleware before calling passport.session()
 passport.use('local', new LocalStrategy({
@@ -106,27 +101,12 @@ passport.deserializeUser(function(id, done) {
         });
 });
 
-
-app.post("/signIn", passport.authenticate('local', {
-    successRedirect: '/services',
-    failureRedirect: '/signIn',
-    failureFlash: true
-}), function(req, res, info) {
-    res.render('/services', { 'message': req.flash('message') });
-});
-
-app.get('/logout', function(req, res) {
-    req.session.destroy();
-    req.logout();
-    res.redirect('/signIn');
-});
-
-
 require("./routes/service-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
-db.sequelize.sync({ }).then(function() {
+db.sequelize.sync({}).then(function() {
+
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });
