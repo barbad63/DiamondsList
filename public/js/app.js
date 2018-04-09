@@ -118,6 +118,10 @@ $("#login").on("click", function(event) {
             console.log(data);
             if (data != null) {
                 sessionStorage.setItem("UserId", data.id);
+                sessionStorage.setItem("address", data.address);
+                sessionStorage.setItem("city", data.city);
+                sessionStorage.setItem("state", data.state);
+                sessionStorage.setItem("zipcode", data.zipcode);
                 window.location.href = "/services";
             }
             if (data == null) {
