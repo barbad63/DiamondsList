@@ -39,8 +39,6 @@ module.exports = function(app) {
 
     app.post("/api/users", function(req, res) {
 
-        // console.log(req);
-        // encrypt password in req.boy
 
         var incoming = req.body;
         incoming["password"] = encryptPassword(incoming.password);
