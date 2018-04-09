@@ -53,6 +53,17 @@ const dropdown = document.querySelector('.dropdown');
 //     dropdown.classList.toggle('is-open');
 // });
 
+$("#clear-form").on("click", function(event) {
+    event.preventDefault();
+    window.location.reload();
+});
+
+$("#logout").on("click", function(event) {
+    event.preventDefault();
+    sessionStorage.clear();
+    window.location.href = "/";
+});
+
 $("#serviceFormSubmit").on("click", function(event) {
     event.preventDefault();
 
@@ -114,6 +125,28 @@ $("#login").on("click", function(event) {
                 window.location.href = "/signIn";
             }
         });
+});
+
+$(".emailGun").on("click", function(event) {
+    event.preventDefault();
+    var id = $(this).data("id");
+    var To = $(this).data("provideremail");
+    var From = sessionStorage.getItem('email');
+    console.log(To);
+    console.log(From);
+    $.ajax({
+        method: "POST",
+        url: '/api/services/mail',
+        data: {
+            to: To,
+            from: 'Diamond Service List <no-reply@diamond.com>',
+            subject: 'Interested Customer for your Diamond Services Posting',
+            text: 'A potential customer is interested in your service posting. Their emil address is ' + From + ".\nThank you for using Diamond Services"
+        }
+    }).done(function(msg) {
+        alert("mail sent");
+        window.location.href = "/services";
+    });
 });
 
 class StarRating extends HTMLElement {

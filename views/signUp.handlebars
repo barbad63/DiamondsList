@@ -1,4 +1,7 @@
 
+
+    <!-- Wrapper -->
+
     <div id="wrapper">
             
 
@@ -102,37 +105,44 @@
                 </div>
             </div>
 
-            <div class="field is-horizontal">
+            <div class="field is-horizontal" id="check">
                 <div class="field" id='email'>
                     <label class="label" style="color:silver">Email</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input id="mail" class="input is-success has-text-white" type="email" placeholder="Email input" value="">
+                        <input id="mail" class="input is-success has-text-white" type="email" placeholder="Email input" value="" required>
                         <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                    </span>
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+
                     </div>
                 </div>
 
                 <div class="field" id='password'>
                     <label class="label" style="color:silver">Password</label>
-                    <p class="control has-icons-left">
-                        <input id="pass" class="input is-success has-text-white" type="password" placeholder="Password" required>
+                    <div class="control has-icons-left">
+                        <p class="control is-expanded">
+                            <input id="pass" class="input is-success has-text-white" type="password" placeholder="Password" required>
+                        </p>
                         <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </p>
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
 
+    <br>
         <div class="field bottom">
             <div class="control is-danger">
                 <label class="checkbox">
                     <input type="checkbox">
-                    I agree to the <a href="#">terms and conditions</a>
+                    <a class="input is-success" href="/terms" target="_blank">I agree to the terms and conditions</a>
                   </label>
             </div>
         </div>
@@ -155,32 +165,26 @@
                 <button class="button is-success" id="signUpSubmit">Submit</button>
             </div>
             <div class="control">
-                <button class="button is-text">Cancel</button>
+                <button class="button is-grey" id="cancel" value="Cancel"><a href="/">Cancel</a></button>
             </div>
+            <div class="control">
+                <button id="clear-form" type="reload" value="Clear">Clear</button>
+            </div>
+            <br>
+            <br>
+            <center>
+                <h1>
+                <button class="button is-black" id="showModal" style="margin-right:30px;" ><a href="/">Log Out</a></button>
+                </h1>
+            </center>
+
+            {{!-- <div class="control">
+                <button id="logout" value="Log Out"><a href="/">Log Out</a></button>
+            </div> --}}
         </div>
     </div>
     </div>
-    <br>
-    <br>
     <br>
     <hr>
 
-{{!-- Footer --}}
-<footer id="footer">
-         <img src="images/f.png" style="border-radius:10px">
-           <img src="images/google.png" style="width:30px" style="border-radius:30px">
-            <img src="images/twitter.png" style="border-radius:10px">
-        <div style=" padding-top:25px;">
-            <div class="container">
-                <div class="footer-bottom clearfix" style="color:blue;width:100%; padding-bottom: 60px;">
-                    <p class="copyright" style="font-size:1.2rem; font-weight:bold;">
-                        Contact Us | FAQ
-                        </li> | Diamond Services Call Center
-                    </p>
-                    <p class="copyright">&copy; Copyright 2018, Diamond Services. All Rights Reserved. | Terms of Use | Privacy Policy
-                    </p>
-                </div>
-            </div>
-        </div>
-        <p>&copy; All rights reserved.</p>
-</footer>
+

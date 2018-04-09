@@ -29,6 +29,9 @@ module.exports = function(app) {
     app.get("/serviceForm", function(req, res) {
         res.render("serviceForm");
     });
+    app.get("/terms", function(req, res) {
+        res.render("terms");
+    });
     app.get("/category", function(req, res) {
         res.render("category");
     });
@@ -37,11 +40,12 @@ module.exports = function(app) {
             where: {
                 category: req.params.category
             },
+
+            include: [db.User]
         }).then(function(dbPost) {
             console.log(dbPost);
             var handlebars = { services: dbPost };
             res.render("category", handlebars);
-
 
         });
     });

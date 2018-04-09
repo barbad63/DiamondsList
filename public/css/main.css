@@ -165,15 +165,38 @@ x-star-rating>.star.full::after {
 #fn,
 #ln,
 #username,
+#email,
 #password,
 #address,
 #city,
 #state,
 #zip,
-#email,
 #phone {
     width: 450px;
     margin-left: 50px;
+}
+
+#password,
+#city,
+#zip,
+#phone {
+    margin-left: 30px;
+}
+
+.copyright {
+    text-align: center;
+}
+
+#test {}
+
+#agree {
+    background-color: antiquewhite;
+    margin: 20px;
+    padding: 30px;
+}
+
+.help {
+    color: white;
 }
 
 .link:hover {
@@ -184,20 +207,20 @@ x-star-rating>.star.full::after {
     margin-left: 50px;
 }
 
+#clear-form {
+    background-color: transparent;
+}
+
+#logout {
+    background-color: #666666;
+}
+
 #wrap {
     padding: 50px;
     background-color: aliceblue;
     border-radius: 30px;
     width: 1000px;
-    height: 500px;
-}
-
-#ln,
-#password,
-#city,
-#zip,
-#phone {
-    margin-left: 30px;
+    /*height: 500px;*/
 }
 
 article,
@@ -255,6 +278,14 @@ q:after {
 }
 
 #login:hover {
+    background-color: #ff496e;
+}
+
+#emailGun {
+    margin-right: 30px;
+}
+
+#emailGun:hover {
     background-color: #ff496e;
 }
 

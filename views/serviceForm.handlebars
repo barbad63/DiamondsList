@@ -20,7 +20,7 @@
     </div>
 
 
-<label class="label">Amount</label>
+<label class="label">Cost of Service</label>
 <div class="field has-addons">
     
   <p class="control">
@@ -71,7 +71,7 @@
   <div class="control">
     <label class="checkbox">
       <input type="checkbox">
-      I agree to the <a href="#">terms and conditions</a>
+     <a href="/terms" target="_blank"> I agree to the  terms and conditions</a>
     </label>
   </div>
 </div>
@@ -83,46 +83,40 @@
       Yes
     </label>
     <label class="radio">
-      <input type="radio" name="question">
-      No
-    </label>
+      <h1>
+      <input type="radio" name="question"><a href="/services">No</a></label>
+      </h1>
   </div>
 </div>
 
 <div class="field is-grouped">
   <div class="control">
 
-
-    <button class="button is-success" id="serviceFormSubmit">submit</button>
+    <button class="button is-success" id="serviceFormSubmit">Submit</button>
 
   </div>
   <div class="control">
-    <button class="button is-text">Cancel</button>
+                <button class="button is-grey" id="cancel" value="Cancel"><a href="/">Cancel</a></button>
   </div>
-</div>
-<div>
-<p><button class="button" style="color: white;background-color:black;width:150px; height:40px;border-radius:30px; " ><a href="/services">Services</a></button></p>
+  <div class="control">
+    <button id="clear-form" type="reload" value="Clear">Clear</button>
+  </div>
+ <br>
+ <div>
+  <h1 id="test">
+    
+   <button class="button is-black" id="addService"><a  href="/serviceForm">Add Service</a></button>
+
+    <button class="button is-black" id="showModal" style="margin-left:30px; width:120px;" ><a href="/">Log Out</a></button>
+  </h1>
+  </div>
+   
 </div>   
-</div>
-</div>
+
 <br>
+<br>
+</div>
 <br>
 <hr>
-<footer id="footer">
-   <img src="images/f.png" style="border-radius:10px">
-      <img src="images/google.png" style="width:30px" style="border-radius:30px">
-      <img src="images/twitter.png" style="border-radius:10px">
-        <div style=" padding-top:25px;">
-            <div class="container">
-              <div class="footer-bottom clearfix" style="color:blue;width:100%; padding-bottom: 60px;">
-              <p class="copyright" style="font-size:1.2rem; font-weight:bold;">
-                  Contact Us | FAQ
-              </li> | Diamond Services Call Center
-            </p>
-            <p class="copyright">&copy; Copyright 2018, Diamond Services. All Rights Reserved. | Terms of Use | Privacy Policy
-            </p>
-        </div>
-      </div>
-    </div>
-  <p>&copy; All rights reserved.</p>
-</footer>
+<br>
+

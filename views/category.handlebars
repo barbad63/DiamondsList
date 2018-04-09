@@ -13,7 +13,7 @@
         <center>
             <h1 class="title is-3 is-danger" style="color:black">AVAILABLE SERVICE IN THIS CATEGORY</h1>
             <br>
-           <h1 class="title is-3 is-danger" style="color:#ff496e"> Few local results found. Here are some from nearby areas</h1>
+           <h1 class="title is-3 is-danger" style="color:#ff496e">Here are a few local results found from nearby areas</h1>
         </center>
 
     <br>
@@ -31,13 +31,16 @@
             <th class="title is-6 is-danger" >Business Service Description</th>
             <th class="title is-6 is-danger" >Cost Of Service</th>
           </tr>
+
           {{#each services }}
           <tr>
             <td>{{category}}</td>
             <td>{{businessName}}</td> 
             <td>{{businessService}}</td>
+
             <td>{{costOfService}}</td>
-            <td><button class="button is-success title is-5" id="login" ><a  href="serviceForm">Send Email</a></button></td>
+            <td><button class="button is-success title is-5 emailGun" data-id="{{id}}" data-provideremail="{{User.email}}">Send Email</button></td>
+
           </tr>
           {{/each}}
           </table>      
@@ -50,7 +53,7 @@
 </center>
 
 <br>
-<div class="container" id="app">
+<div class="" id="app">
 <div class="modal">
   <div class="modal-background"></div>
   <div class="modal-card">
@@ -82,24 +85,8 @@
   </p>
 
 </div>
-<hr>
+<br>
+<br>
 
-{{!-- Footer --}}
-<footer id="footer">
-     <img src="/images/f.png" style="border-radius:10px">
-           <img src="/images/google.png" style="width:30px" style="border-radius:0px">
-            <img src="/images/twitter.png" style="border-radius:10px"> 
-        <div style=" padding-top:25px;">
-            <div class="container">
-                <div class="footer-bottom clearfix" style="color:blue;width:100%; padding-bottom: 60px;">
-                    <p class="copyright" style="font-size:1.2rem; font-weight:bold;">
-                        Contact Us | FAQ
-                        </li> | Diamond Services Call Center
-                    </p>
-                    <p class="copyright">&copy; Copyright 2018, Diamond Services. All Rights Reserved. | Terms of Use | Privacy Policy
-                    </p>
-                </div>
-            </div>
-        </div>
-        <p>&copy; All rights reserved.</p>
-</footer>
+  <hr>
+
