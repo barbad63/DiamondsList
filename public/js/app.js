@@ -1,6 +1,7 @@
 $("#signUpSubmit").on("click", function(event) {
     event.preventDefault();
 
+
     var newUser = {
         fullName: $("#fullName").val().trim(),
         // var lastName = $("#lastName").val();
@@ -15,9 +16,9 @@ $("#signUpSubmit").on("click", function(event) {
     };
     //Send an AJAX post to the user-api post request
     $.post("/api/users", newUser)
-    //on success tell the user
+        //on success tell the user
         .done(function(data) {
-            window.location.href="/services";
+            window.location.href = "/signIn";
         });
 
     // console.log("First Name: " + firstName);
@@ -30,7 +31,7 @@ $("#signUpSubmit").on("click", function(event) {
     console.log("Zipcode: " + newUser.zipcode);
     console.log("Email: " + newUser.email);
     console.log("Phone Number: " + newUser.phoneNumber);
-//Turn this off while testing
+    //Turn this off while testing
     // $("#fullName").val("");
     // // $("#lastName").val("");
     // $("#un").val("");
@@ -41,6 +42,7 @@ $("#signUpSubmit").on("click", function(event) {
     // $("#zi").val("");
     // $("#mail").val("");
     // $("#number").val("");
+
 
 });
 
@@ -59,7 +61,7 @@ $("#clear-form").on("click", function(event) {
 $("#logout").on("click", function(event) {
     event.preventDefault();
     sessionStorage.clear();
-    window.location.href="/";
+    window.location.href = "/";
 });
 
 $("#serviceFormSubmit").on("click", function(event) {
@@ -82,39 +84,46 @@ $("#serviceFormSubmit").on("click", function(event) {
 
     $.ajax({
         method: "POST",
-        url: '/api/services',    
-        data: { 
-            category: category,    
+        url: '/api/services',
+        data: {
+            category: category,
             businessName: businessName,
-            businessService : businessService,
+            businessService: businessService,
             costOfService: amount,
             UserId: sessionStorage.getItem("UserId")
 
         }
-        }).done(function( msg ) {
-        window.location.href="/services";
-        });
+    }).done(function(msg) {
+        window.location.href = "/services";
+    });
 
 
 });
+
 
 $("#login").on("click", function(event) {
     event.preventDefault();
 
     var signin = {
 
-        email: $("#email").val().trim(),
-        password: $("#password").val().trim()
+        email: $("#emailId").val().trim(),
+        password: $("#passwordId").val().trim()
+
 
     };
     //Send an AJAX post to the user-api post request
     $.post("/api/signin", signin)
-    //on success tell the user
+        //on success tell the user
         .done(function(data) {
-            sessionStorage.setItem("UserId", data.id);
-            sessionStorage.setItem("email", data.email);
-            sessionStorage.setItem("address", data.address);
-            window.location.href="/services";
+            console.log(data);
+            if (data != null) {
+                sessionStorage.setItem("UserId", data.id);
+                window.location.href = "/services";
+            }
+            if (data == null) {
+                alert("Login Failed");
+                window.location.href = "/signIn";
+            }
         });
 });
 
@@ -125,21 +134,20 @@ $(".emailGun").on("click", function(event) {
     var From = sessionStorage.getItem('email');
     console.log(To);
     console.log(From);
-        $.ajax({
-            method: "POST",
-            url: '/api/services/mail',    
-            data: { 
-                to: To,    
-                from: 'Diamond Service List <no-reply@diamond.com>',
-                subject: 'Interested Customer for your Diamond Services Posting',
-                text: 'A potential customer is interested in your service posting. Their emil address is ' + From + ".\nThank you for using Diamond Services"
-            }
-        }).done(function( msg ) {
-            alert("mail sent");
-            window.location.href="/services";
-        });
+    $.ajax({
+        method: "POST",
+        url: '/api/services/mail',
+        data: {
+            to: To,
+            from: 'Diamond Service List <no-reply@diamond.com>',
+            subject: 'Interested Customer for your Diamond Services Posting',
+            text: 'A potential customer is interested in your service posting. Their emil address is ' + From + ".\nThank you for using Diamond Services"
+        }
+    }).done(function(msg) {
+        alert("mail sent");
+        window.location.href = "/services";
+    });
 });
-
 
 class StarRating extends HTMLElement {
     get Value() {
