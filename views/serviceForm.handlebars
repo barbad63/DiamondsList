@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<label class="label">Amount</label>
+<label class="label">Cost of Service</label>
 <div class="field has-addons">
     
   <p class="control">
@@ -71,7 +71,7 @@
   <div class="control">
     <label class="checkbox">
       <input type="checkbox">
-      I agree to the <a href="#">terms and conditions</a>
+      I agree to the <a href="/terms" target="_blank">terms and conditions</a>
     </label>
   </div>
 </div>
@@ -83,24 +83,26 @@
       Yes
     </label>
     <label class="radio">
-      <input type="radio" name="question">
-      No
-    </label>
+      <input type="radio" name="question"><a href="/services">No</a></label>
   </div>
 </div>
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-success" id="serviceFormSubmit">submit</button>
+    <button class="button is-success" id="serviceFormSubmit">Submit</button>
   </div>
   <div class="control">
-    <button class="button is-text">Cancel</button>
+    <button id="cancel" value="Cancel"><a href="/services">Cancel</a></button>
   </div>
-</div>
-<div>
-<p><button class="button" style="color: white;background-color:black;width:150px; height:40px;border-radius:30px; " ><a href="/services">Services</a></button></p>
+  <div class="control">
+    <button id="clear-form" type="reload" value="Clear">Clear</button>
+  </div>
+  <div>
+    <button class="button" style="color: white;background-color:black;width:150px; float: right; height:40px;border-radius:30px; " ><a href="/services">Go To Services List</a></button>
+  </div>
+  <div class="control">
+    <button id="logout" value="Log Out"><a href="/">Log Out</a></button>
+  </div>
 </div>   
-</div>
 <br>
 <br>
-<hr>
