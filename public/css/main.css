@@ -262,6 +262,14 @@ q:after {
     background-color: #ff496e;
 }
 
+#emailGun {
+    margin-right: 30px;
+}
+
+#emailGun:hover {
+    background-color: #ff496e;
+}
+
 #serviceFormSubmit:hover {
     background-color: #ff496e;
 }

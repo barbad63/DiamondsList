@@ -37,7 +37,7 @@ module.exports = function(app) {
                 where: {
                 category: req.params.category
             },
-            // include: [db.User]
+            include: [db.User]
             }).then(function(dbPost) {
                 console.log (dbPost);
             var handlebars = {services: dbPost};

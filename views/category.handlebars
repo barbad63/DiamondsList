@@ -35,7 +35,7 @@
             <td>{{businessName}}</td> 
             <td>{{businessService}}</td>
             <td>{{costOfService}}</td>
-            <td><button class="button is-success title is-5" id="login" ><a  href="serviceForm">Send Email</a></button></td>
+            <td><button class="button is-success title is-5 emailGun" data-id="{{id}}" data-provideremail="{{User.email}}">Send Email</button></td>
           </tr>
           {{/each}}
           </table>      

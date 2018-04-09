@@ -8,7 +8,7 @@ VALUES ("keira.mclean@yahoo.com","1234","Keira McLean","6038718479","7 Clarkdale
 ("namefirst.namelast@yahoo.com","1234","My Name","6035559999","35 Mooring Drive", "Hampton", "NH", "03842","2018-04-07 15:29:45","2018-04-07 15:29:45"),
 ("keira.nevers@gmail.com","1234","Keira Nevers","6039037351","4196 Province Lake Road", "Wakefield", "NH", "03830","2018-04-07 15:29:45","2018-04-07 15:29:45"),
 ("david.nevers907@gmail.com","1234","David Nevers","9079828262","4196 Province Lake Road", "Wakefield", "NH", "08380","2018-04-07 15:29:45","2018-04-07 15:29:45"),
-("dbarbarits@yahoo.com","1234","Don Barbarits","6036618306","826 South Street", "Portsmouth", "NH", "03801","2018-04-07 15:29:45","2018-04-07 15:29:45");
+("barbarits@comcast.net","1234","Don Barbarits","6036618306","826 South Street", "Portsmouth", "NH", "03801","2018-04-07 15:29:45","2018-04-07 15:29:45");
 
 INSERT INTO services (category, businessName, businessService, costOfService, createdAt, updatedAt, UserID)
 VALUES
