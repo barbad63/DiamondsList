@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var JAWSDB_URL = ('mysql://wuap47bm154mtstj:d7h9o8uoe6r4xqcq@i5x1cqhq5xbqtv00.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/wv7pgc1u2uwl7hek');
 
 // For login using passport
 var flash = require('connect-flash');
