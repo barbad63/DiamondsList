@@ -64,7 +64,6 @@ module.exports = function(app) {
         });
     });
 
-
     app.delete("/api/services/:id", function(req, res) {
         db.Post.destroy({
             where: {
@@ -74,7 +73,6 @@ module.exports = function(app) {
             res.json(dbService);
         });
     });
-
 
     app.put("/api/services", function(req, res) {
         db.Service.update(

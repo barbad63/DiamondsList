@@ -1,5 +1,7 @@
 
+
     <!-- Wrapper -->
+
     <div id="wrapper">
             
 
@@ -10,6 +12,8 @@
             <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
 
         </header>
+
+        {{!-- Main Cointainer --}}
         <center>
             <h1 class="title is-3 is-danger" style="color:silver">Sign Up</h1>
         </center>
@@ -23,7 +27,6 @@
                     <div class="control">
                         <input id="fullName" class="input is-success has-text-white" type="text" placeholder="Text input" value="" required>
                     </div>
-                    <!-- <p class="help is-success">This username is available</p> -->
                 </div>
 
                   <div class="field" id='phone'>
@@ -42,8 +45,6 @@
                         <p class="help">Do not enter the first zero</p>
                     </div>
                 </div>
-
-            
             </div>
 
             <div class="field is-horizontal">
@@ -80,11 +81,11 @@
                     <div class="control has-icons-left has-icons-right">
                         <input id="stat" class="input is-success has-text-white" type="text" placeholder="Text input" value="" required>
                         <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                              </span>
+                            <i class="fas fa-user"></i>
+                        </span>
                         <span class="icon is-small is-right">
-                                <i class="fas fa-check"></i>
-                              </span>
+                            <i class="fas fa-check"></i>
+                         </span>
                     </div>
                 </div>
 
@@ -95,16 +96,16 @@
                             <input id="zi" class="input is-success has-text-white" type="tel" placeholder="zipcode">
                         </p>
                         <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                              </span>
+                            <i class="fas fa-user"></i>
+                        </span>
                         <span class="icon is-small is-right">
-                                <i class="fas fa-check"></i>
-                              </span>
+                            <i class="fas fa-check"></i>
+                         </span>
                     </div>
                 </div>
             </div>
 
-            <div class="field is-horizontal">
+            <div class="field is-horizontal" id="check">
                 <div class="field" id='email'>
                     <label class="label" style="color:silver">Email</label>
                     <div class="control has-icons-left has-icons-right">
@@ -115,6 +116,7 @@
                         <span class="icon is-small is-right">
                             <i class="fas fa-check"></i>
                         </span>
+
                     </div>
                 </div>
 
@@ -135,13 +137,12 @@
             </div>
         </div>
 
-
-
+    <br>
         <div class="field bottom">
             <div class="control is-danger">
                 <label class="checkbox">
                     <input type="checkbox">
-                    I agree to the <a href="/terms" target="_blank">terms and conditions</a>
+                    <a class="input is-success" href="/terms" target="_blank">I agree to the terms and conditions</a>
                   </label>
             </div>
         </div>
@@ -164,16 +165,26 @@
                 <button class="button is-success" id="signUpSubmit">Submit</button>
             </div>
             <div class="control">
-                <button id="cancel" value="Cancel"><a href="/">Cancel</a></button>
+                <button class="button is-grey" id="cancel" value="Cancel"><a href="/">Cancel</a></button>
             </div>
             <div class="control">
                 <button id="clear-form" type="reload" value="Clear">Clear</button>
             </div>
-            <div class="control">
+            <br>
+            <br>
+            <center>
+                <h1>
+                <button class="button is-black" id="showModal" style="margin-right:30px;" ><a href="/">Log Out</a></button>
+                </h1>
+            </center>
+
+            {{!-- <div class="control">
                 <button id="logout" value="Log Out"><a href="/">Log Out</a></button>
-            </div>
+            </div> --}}
         </div>
     </div>
     </div>
     <br>
+    <hr>
+
 

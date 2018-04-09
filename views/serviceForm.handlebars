@@ -1,25 +1,24 @@
   <div id="wrapper">
-        
-        <!-- Header -->
-        <header id="header">
 
-            <h1 class="title is-3" id="font">Diamond Services</h1>
-            <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
-        </header>
 
-        <center>
-            <h1 class="title is-3 is-danger" style="color:black">SERVICE FORM</h1>
-        </center>
+  <!-- Header -->
+    <header id="header">
+        <h1 class="title is-3" id="font">Diamond Services</h1>
+        <span class="avatar"><img src="https://vignette.wikia.nocookie.net/steven-universe/images/7/75/20160305000536-diamond-1-.jpeg/revision/latest?cb=20160602164244" alt="" /></span>
+    </header>
 
-        <br>
- 
+    <center>
+        <h1 class="title is-3 is-danger" style="color:black">SERVICE FORM</h1>
+    </center> 
+    <br>
 
-<div class="field">
-  <label class="label" id='bName'>Business Name</label>
-  <div class="control">
-    <textarea id="businessName" class="textarea is-rounded" placeholder="Textarea"></textarea>
-  </div>
-</div>
+    <div class="field">
+        <label class="label" id='bName'>Business Name</label>
+        <div class="control">
+          <textarea id="businessName" class="textarea is-rounded" placeholder="Textarea"></textarea>
+        </div>
+    </div>
+
 
 <label class="label">Cost of Service</label>
 <div class="field has-addons">
@@ -34,8 +33,9 @@
   <p class="control">
     <input id="amount" class="input is-rounded" type="number" placeholder="Amount of money">
   </p>
+  </div>
 
-</div>
+
 
 <div class="field">
   <label class="label">Category</label>
@@ -43,19 +43,19 @@
   <select id="myselect" style="width:300px;">
     <option >Select dropdown</option>
     <option value="automotives">automotives</option>
-     <option value="beauty">beauty</option>
-      <option value="mobile">mobile</option>
-       <option value="creative">creative</option>
-        <option value="event">event</option>
-         <option value="gardening">gardening</option>
-          <option value="household">household</option>
-           <option value="labor">labor</option>
-           <option value="lessons">lessons</option>
-           <option value="pet">pet</option>
-           <option value="real estate">real estate</option>
-           <option value="therapeutic">therapeutic</option>
+    <option value="beauty">beauty</option>
+    <option value="mobile">mobile</option>
+    <option value="creative">creative</option>
+    <option value="event">event</option>
+    <option value="gardening">gardening</option>
+    <option value="household">household</option>
+    <option value="labor">labor</option>
+    <option value="lessons">lessons</option>
+    <option value="pet">pet</option>
+    <option value="real estate">real estate</option>
+    <option value="therapeutic">therapeutic</option>
   </select>
-</div>
+  </div>
 </div>
 
 
@@ -71,7 +71,7 @@
   <div class="control">
     <label class="checkbox">
       <input type="checkbox">
-      I agree to the <a href="/terms" target="_blank">terms and conditions</a>
+     <a href="/terms" target="_blank"> I agree to the  terms and conditions</a>
     </label>
   </div>
 </div>
@@ -83,26 +83,40 @@
       Yes
     </label>
     <label class="radio">
+      <h1>
       <input type="radio" name="question"><a href="/services">No</a></label>
+      </h1>
   </div>
 </div>
 
 <div class="field is-grouped">
   <div class="control">
+
     <button class="button is-success" id="serviceFormSubmit">Submit</button>
+
   </div>
   <div class="control">
-    <button id="cancel" value="Cancel"><a href="/services">Cancel</a></button>
+                <button class="button is-grey" id="cancel" value="Cancel"><a href="/">Cancel</a></button>
   </div>
   <div class="control">
     <button id="clear-form" type="reload" value="Clear">Clear</button>
   </div>
-  <div>
-    <button class="button" style="color: white;background-color:black;width:150px; float: right; height:40px;border-radius:30px; " ><a href="/services">Go To Services List</a></button>
+ <br>
+ <div>
+  <h1 id="test">
+    
+   <button class="button is-black" id="addService"><a  href="/serviceForm">Add Service</a></button>
+
+    <button class="button is-black" id="showModal" style="margin-left:30px; width:120px;" ><a href="/">Log Out</a></button>
+  </h1>
   </div>
-  <div class="control">
-    <button id="logout" value="Log Out"><a href="/">Log Out</a></button>
-  </div>
+   
 </div>   
+
 <br>
 <br>
+</div>
+<br>
+<hr>
+<br>
+

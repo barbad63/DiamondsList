@@ -171,17 +171,34 @@ x-star-rating>.star.full::after {
 #city,
 #state,
 #zip,
-#email,
 #phone {
     width: 450px;
     margin-left: 50px;
 }
+
+#password,
+#city,
+#zip,
+#phone {
+    margin-left: 30px;
+}
+
 .copyright {
     text-align: center;
 }
+
+#test {}
+
+#agree {
+    background-color: antiquewhite;
+    margin: 20px;
+    padding: 30px;
+}
+
 .help {
     color: white;
 }
+
 .link:hover {
     background-color: #ff496e;
 }
@@ -189,27 +206,21 @@ x-star-rating>.star.full::after {
 .bottom {
     margin-left: 50px;
 }
+
 #clear-form {
     background-color: transparent;
 }
+
 #logout {
     background-color: #666666;
 }
+
 #wrap {
     padding: 50px;
     background-color: aliceblue;
     border-radius: 30px;
     width: 1000px;
     /*height: 500px;*/
-}
-
-#ln,
-#password,
-#email,
-#city,
-#zip,
-#phone {
-    margin-left: 30px;
 }
 
 article,
@@ -1552,7 +1563,7 @@ textarea {
 a {
     color: inherit;
     text-decoration: none;
-    border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
+    /* border-bottom: dotted 1px rgba(255, 255, 255, 0.35); */
     -moz-transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
     -webkit-transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
     -ms-transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -2793,7 +2804,5 @@ body.is-covered #wrapper {
 #zi,
 #mail,
 #pass {
-
     background-color: #000;
 }
-
