@@ -23,7 +23,7 @@ module.exports = function(app) {
     app.get("/signUp", function(req, res) {
         res.render("signUp");
     });
-    app.get("/categories", function(req, res) {
+    app.get("/services", function(req, res) {
         res.render("services");
     });
     app.get("/serviceForm", function(req, res) {
@@ -37,7 +37,6 @@ module.exports = function(app) {
             where: {
                 category: req.params.category
             },
-            // include: [db.User]
         }).then(function(dbPost) {
             console.log(dbPost);
             var handlebars = { services: dbPost };

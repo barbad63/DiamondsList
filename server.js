@@ -65,7 +65,6 @@ passport.use('local', new LocalStrategy({
     console.log(email + ' = ' + password);
     if (!email || !password) { return done(null, false, req.flash('message', 'All fields are required.')); }
     var salt = '7fa73b47df808d36c5fe328546ddef8b9011b2c6';
-    // connection.query("select * from tbl_users where username = ?", [username],
     db.User.findAll({ where: { "email": email } }).then(
         function(rows, err) {
             console.log("Error Occured while retrieving user credentials = " + JSON.stringify(err));
@@ -92,7 +91,6 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-    // connection.query("select * from tbl_users where id = " + id, 
     db.User.findAll({ where: { id: id } }).then(
         function(rows, err) {
             console.log("Inside deserializeUser");

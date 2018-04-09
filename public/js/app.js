@@ -18,7 +18,7 @@ $("#signUpSubmit").on("click", function(event) {
     $.post("/api/users", newUser)
         //on success tell the user
         .done(function(data) {
-            window.location.href = "/services";
+            window.location.href = "/signIn";
         });
 
     // console.log("First Name: " + firstName);
@@ -89,25 +89,32 @@ $("#serviceFormSubmit").on("click", function(event) {
 
 });
 
+
 $("#login").on("click", function(event) {
     event.preventDefault();
 
     var signin = {
 
-        email: $("#email").val().trim(),
-        password: $("#password").val().trim()
+        email: $("#emailId").val().trim(),
+        password: $("#passwordId").val().trim()
+
 
     };
     //Send an AJAX post to the user-api post request
     $.post("/api/signin", signin)
         //on success tell the user
         .done(function(data) {
-            sessionStorage.setItem("UserId", data.id);
-            window.location.href = "/services";
+            console.log(data);
+            if (data != null) {
+                sessionStorage.setItem("UserId", data.id);
+                window.location.href = "/services";
+            }
+            if (data == null) {
+                alert("Login Failed");
+                window.location.href = "/signIn";
+            }
         });
 });
-
-
 
 class StarRating extends HTMLElement {
     get Value() {
