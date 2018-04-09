@@ -126,7 +126,7 @@ require("./routes/service-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
-db.sequelize.sync({ }).then(function() {
+db.sequelize.sync({}).then(function() { // deleted the force as in: { force: true }
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });

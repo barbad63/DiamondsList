@@ -1,5 +1,13 @@
 var db = require("../models");
+require("dotenv").config();
+var mailgun = require("mailgun-js");
+const keys = require('../keys.js');
+var gkeys = keys.email;
+var api_key = gkeys.email_priv_key;
+var DOMAIN = gkeys.domain
+console.log(api_key, DOMAIN);
 
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
 
 module.exports = function(app) {
 
@@ -13,9 +21,29 @@ module.exports = function(app) {
         db.Service.findAll({
             where: query,
             include: [db.User]
-        }).then(function(dbPost) {
+        }).then(function(dbService) {
             res.json(dbService);
         });
+    });
+
+    app.post("/api/services/mail", function(req, res) {
+
+    mailgun.messages().send(req.body, function (error, body) {
+      if(error){
+        console.log(error);
+      }else{
+        console.log(body);
+        res.sendStatus(200);
+      }
+
+    });
+       // require('../mailgun.js')(req.body),function(err, data){
+       //      if (err) throw err
+       //      // res.sendStatus(200);
+       //      res.json(data);
+       // };
+       // console.log(res.headersSent);
+
     });
 
     app.get("/api/services/:id", function(req, res) {
